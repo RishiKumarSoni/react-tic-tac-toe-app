@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1><i>Tic Tca Toe</i></h1>
+        <h1><i>Tic Tac Toe</i></h1>
         <Board />
 
       </div>

@@ -14,13 +14,13 @@ export default function Board() {
 
     function handleClick(i) {
         if (square[i] || Winner(square)){
+            setSquare(Array(9).fill(null));
             return;
         }
 
         // take a copy of square array
         const temp = square.slice();
 
-        // xIsNext && temp[i]==="~" ? temp[i] = 'X': temp[i] = 'O';
         if(xIsNext && temp[i]!=='X') {
             temp[i] = 'X';
         } else if(temp[i]!=='O') {
@@ -57,7 +57,10 @@ export default function Board() {
                 <Square value={square[8]} onSquareClick={() => handleClick(8)}/>
             </div>
         </div>
-        <p className='status'>{status}</p>
+        <p className='status'>{status} </p>
+        {
+            winner ? <span>Click any box to refresh</span> : ''
+        }
         </>
     );
 }
